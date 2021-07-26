@@ -1,0 +1,32 @@
+{
+  "name": "serendip_1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@nuxt/content": "^1.14.0",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "nuxt-buefy": "^0.4.8",
+    "nuxt-fontawesome": "^0.4.0",
+    "nuxt-property-decorator": "^2.9.1",
+    "nuxt-webfontloader": "^1.1.0",
+    "prism-themes": "^1.8.0",
+    "sass": "^1.35.2",
+    "sass-loader": "^10.1.1",
+    "vue-burger-menu": "^2.0.5",
+    "vue-class-component": "^7.2.6"
+  },
+  "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.4.0",
+    "@nuxt/types": "^2.15.7",
+    "@nuxt/typescript-build": "^2.1.0",
+    "imagemin-pngquant": "^9.0.2"
+  }
+}

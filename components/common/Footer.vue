@@ -1,0 +1,78 @@
+<template>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <div class="hero is-small">
+        <div class="hero-body">
+          <p class="title lato-bold">
+            Serendip
+          </p>
+        </div>
+      </div>
+      <div class="links columns is-mobile">
+        <div class="column is-4 lato">
+          <router-link class="link" to="/">
+            HOME
+          </router-link>
+        </div>
+        <div class="column is-4 lato">
+          <router-link class="link" to="about">
+            ABOUT
+          </router-link>
+        </div>
+        <div class="column is-4 lato">
+          <router-link class="link" to="contact">
+            CONTACT
+          </router-link>
+        </div>
+      </div>
+      <div class="ex-links columns is-mobile">
+        <div class="column is-3" />
+        <div class="column is-3">
+          <a class="link-icon" href="https://tatoostudioserendip.stores.jp">
+            <b-icon
+              icon="store"
+              size="is-medium"
+            />
+          </a>
+        </div>
+        <div class="column is-3">
+          <a href="https://www.instagram.com/">
+            <img src="@/assets/images/common/instagram.svg">
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p class="lato">copyright © Serendip</p>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<style lang="scss" scoped>
+.footer {
+  background-color: black;
+  padding: 1rem;
+  padding-bottom: 0;
+  color: white;
+
+  .title {
+    color: white;
+  }
+
+  .link {
+    font-size: 0.8rem;
+    color: white;
+    text-decoration:underline;
+  }
+
+  .ex-links {
+    .link-icon {
+      color: white;
+    }
+  }
+
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+</style>
