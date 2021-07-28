@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'serendip_1',
+    title: 'Serendip | Tattoo Studio Serendip',
     htmlAttrs: {
       lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'Serendip', name: 'Serendip', content: 'タトゥースタジオ「Serendip」のホームページです。' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
