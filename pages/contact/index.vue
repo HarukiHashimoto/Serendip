@@ -19,7 +19,7 @@
 
             <div class="card">
               <div class="card-image">
-                <a href="tel:000-0000-0000">
+                <a href="tel:080-6356-0022">
                   <b-image
                     :src="require('@/assets/images/contact/tell.png')"
                     ratio="800by800"
@@ -31,7 +31,7 @@
           </a>
         </div>
         <div class="column is-half">
-          <a href="mailto: mailmail@mail.com?subject=Tattoo Studio Serendipへの問い合わせ&body=以下ご記入の上、ご返信ください。%0d%0a%0d%0a問い合わせ内容：%0d%0a%0d%0a氏名(任意)：%0d%0a%0d%0a電話番号(任意)：%0d%0a※お問い合わせいただいた内容によってはお電話にて回答させていただくことがございます。">
+          <a href="mailto: tattoo.studio.serendip@gmail.com?subject=Tattoo Studio Serendipへの問い合わせ&body=以下ご記入の上、ご返信ください。%0d%0a%0d%0a問い合わせ内容：%0d%0a%0d%0a氏名(任意)：%0d%0a%0d%0a電話番号(任意)：%0d%0a※お問い合わせいただいた内容によってはお電話にて回答させていただくことがございます。">
             <div class="card">
               <div class="card-image">
                 <b-image
