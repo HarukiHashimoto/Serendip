@@ -1,4 +1,4 @@
-# serendip_1
+# Serendip
 
 ## Build Setup
 
