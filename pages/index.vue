@@ -10,7 +10,6 @@
     </div>
     <div class="contents">
       <News :news="news" />
-      <Gallary />
       <Contact />
     </div>
   </div>
@@ -20,13 +19,11 @@
 import { Component, Vue } from "nuxt-property-decorator"
 import { Context } from '@nuxt/types'
 import News from "./top/-News.vue"
-import Gallary from "./top/-Gallary.vue"
 import Contact from "./top/-Contact.vue"
 
 @Component({
   components: {
     News,
-    Gallary,
     Contact
   }
 })

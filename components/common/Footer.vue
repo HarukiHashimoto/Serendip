@@ -31,15 +31,16 @@
           <a class="link-icon" href="https://tatoostudioserendip.stores.jp">
             <b-icon
               icon="store"
-              size="is-medium"
+              class="store-icon"
             />
           </a>
         </div>
-        <div class="column is-3">
+        <div class="column is-3 insta-icon">
           <a href="https://www.instagram.com/">
             <img src="@/assets/images/common/instagram.svg">
           </a>
         </div>
+        <div class="column is-3" />
       </div>
       <div class="copyright">
         <p class="lato">copyright © Serendip</p>
@@ -68,6 +69,23 @@
   .ex-links {
     .link-icon {
       color: white;
+      font-size: 32px;
+    }
+
+    .insta-icon {
+      display:block;
+      margin: auto;
+
+      a {
+        width: 32px;
+        height: 32px;
+        display: block;
+        margin: auto;
+
+        img {
+          vertical-align: middle;
+        }
+      }
     }
   }
 
