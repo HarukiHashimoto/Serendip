@@ -38,12 +38,12 @@
       </div>
       <div container has-text-centered>
         <b-pagination
-        :total="count"
-        v-model="current"
-        simple="true"
-        per-page="6"
-        icon-prev='chevron-left'
-        icon-next='chevron-right'
+          :total="count"
+          v-model="current"
+          simple="true"
+          per-page="6"
+          icon-prev='chevron-left'
+          icon-next='chevron-right'
         >
           <template #previous="props">
             <b-pagination-button
@@ -95,6 +95,7 @@ export default class NewsIndex extends Vue{
 
   // 記事取得
   articles = []  //初期化
+  count = 0
   async asyncData({ redirect, store, $content, params, error }: Context) {
     // ページ数を超えたリクエストはリダイレクト
     const count = await $content('articles').only('title').fetch()
@@ -126,7 +127,7 @@ export default class NewsIndex extends Vue{
   }
 
   get max() {
-    return Math.ceil( count / 6 )
+    return Math.ceil( this.count / 6 )
   }
   get num() {
     let tmp = [];
