@@ -36,7 +36,7 @@
           </a>
         </div>
         <div class="column is-3 insta-icon">
-          <a href="https://www.instagram.com/">
+          <a href="https://www.instagram.com/serendip.22">
             <img src="@/assets/images/common/instagram.svg">
           </a>
         </div>
