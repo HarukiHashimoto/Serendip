@@ -3,6 +3,7 @@
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
         <h1 class="title lato-bold">Serendip</h1>
+        <!-- <ImageLoader file="assets/images/common/brand.JPG" /> -->
       </b-navbar-item>
     </template>
     <template #end>
@@ -20,8 +21,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator"
+import ImageLoader from '@/components/common/ImageLoader.vue'
 
-@Component
+@Component({
+  components: {
+    ImageLoader
+  }
+})
 export default class Navbar extends Vue{
   data() {
     return {

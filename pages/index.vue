@@ -2,7 +2,7 @@
   <div id="page">
     <div id="header-image">
       <b-carousel :indicator="false">
-        <b-carousel-item class="main-image-box" v-for="(item, i) in 6" :key="i">
+        <b-carousel-item class="main-image-box" v-for="(item, i) in 5" :key="i">
           <b-image class="image main-image" ratio="6by4" :src="require(`@/assets/images/top/top-${i+1}.JPG`)"></b-image>
           <!-- <img class="main-title" src="@/assets/images/top/main_title.svg" /> -->
         </b-carousel-item>
