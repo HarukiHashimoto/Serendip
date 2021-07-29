@@ -1,3 +1,16 @@
+@import '~bulma/sass/utilities/_all';
+$primary: #225193;
+$size-1: 2.7rem;
+$size-2: 2.2rem;
+$size-3: 1.7rem;
+$size-4: 1.2rem;
+$size-5: 1.0rem;
+$size-6: 0.8rem;
+$size-7: 0.6rem;
+
+@import '~bulma';
+@import '~buefy/src/scss/buefy';
+
 body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }

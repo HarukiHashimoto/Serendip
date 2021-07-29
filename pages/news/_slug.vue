@@ -40,10 +40,10 @@ export default class NewsPage extends Vue {
 
     > .article-title {
       > .title {
-        font-size: 1.5rem;
+        font-size: size-4;
       }
       > .subtitle {
-        font-size: 1.1rem;
+        font-size: size-5;
       }
     }
   }
@@ -89,6 +89,7 @@ export default class NewsPage extends Vue {
 
   p {
     margin: 20px 0 10px;
+    font-size: size-7;
   }
 
   code {

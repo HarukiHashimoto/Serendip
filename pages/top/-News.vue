@@ -52,11 +52,11 @@ export default class TopNews extends Vue{
 <style lang="scss" scoped>
 .news-index {
   .news-title {
-    font-size: 1.2rem;
+    font-size: size-4;
   }
   .news-date {
     text-align: right;
-    font-size: 1rem;
+    font-size: size-6;
     color: dimgray;
   }
 }

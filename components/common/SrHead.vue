@@ -44,7 +44,12 @@ export default class SrHead extends Vue{
     margin-right: auto;
 
     &.title {
+      font-size: size-5;
       background:linear-gradient(transparent 95%, black 0%);
+    }
+
+    &.subtitle {
+      font-size: size-6;
     }
   }
 }

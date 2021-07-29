@@ -2,35 +2,16 @@
   <section>
     <SrHead :title="title" />
     <section class="section news-index">
-      <div class="columns">
-        <div v-for="a in firstArticles" :key="a.slug" class="column is-4">
+      <div class="columns is-multiline">
+        <div v-for="a in articles" :key="a.slug" class="column is-4">
           <nuxt-link :to="'/news/'+ a.slug" class="article-card">
           <div class="card">
             <div class="card-image">
               <ImageLoader :file="a.img" />
             </div>
             <div class="card-content">
-              <div class="columns">
-                <div class="column is-8 news-title">{{ a.title }}</div>
-                <div class="column is-4 news-date">{{ a.date }}</div>
-              </div>
-            </div>
-          </div>
-          </nuxt-link>
-        </div>
-      </div>
-      <div class="columns">
-        <div v-for="a in secondArticles" :key="a.slug" class="column is-4">
-          <nuxt-link :to="'/news/'+ a.slug" class="article-card">
-          <div class="card">
-            <div class="card-image">
-              <ImageLoader :file="a.img" />
-            </div>
-            <div class="card-content">
-              <div class="columns">
-                <div class="column is-8 news-title">{{ a.title }}</div>
-                <div class="column is-4 news-date">{{ a.date }}</div>
-              </div>
+              <div class="column news-title">{{ a.title }}</div>
+              <div class="column news-date">{{ a.date }}</div>
             </div>
           </div>
           </nuxt-link>
@@ -101,27 +82,18 @@ export default class NewsIndex extends Vue{
     .fetch()
     return { articles, count: count.length }
   }
-
-  get firstArticles() {
-    const fa = this.articles.filter((element, index) => index < 3)
-    return fa
-  }
-
-  get secondArticles() {
-    const sa = this.articles.filter((element, index) => index >= 3)
-    return sa
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .news-index {
   .news-title {
-    font-size: 1.5rem;
+    font-size: size-4;
   }
+
   .news-date {
     text-align: right;
-    font-size: 1rem;
+    font-size: size-6;
     color: dimgray;
   }
 
