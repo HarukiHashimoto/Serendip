@@ -8,7 +8,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'Serendip', name: 'Serendip', content: 'タトゥースタジオ「Serendip」のホームページです。' },
+      { hid: 'Serendip', name: 'Serendip', content: '福井のタトゥースタジオ「Serendip」のホームページです。' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
