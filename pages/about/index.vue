@@ -53,14 +53,14 @@ export default class About extends Vue{
 .about-content {
   > .about-main {
     > p {
-      font-size: 1.2rem;
+      font-size: 1.0rem;
       text-align: justify;
       font-weight: bold;
     }
   }
   > .about-sub {
     > p {
-      font-size: 1rem;
+      font-size: 0.8rem;
       text-align: justify;
     }
   }

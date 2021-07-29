@@ -2,9 +2,9 @@
   <section>
     <SrHead :title="title" />
     <section class="section price-size content">
-      <h3>
+      <h4>
         サイズ別
-      </h3>
+      </h4>
       <div
         class="prices"
         v-for="p in sizePrices"
@@ -20,9 +20,9 @@
       </div>
     </section>
     <section class="section price-time content">
-      <h3>
+      <h4>
         時間制
-      </h3>
+      </h4>
       <div
         class="prices"
         v-for="p in timePrices"
@@ -115,21 +115,24 @@ export default class Price extends Vue{
 .prices {
 
   > .price {
-    padding-top: 1rem;
+    padding-top: 0.9rem;
     border-style: none none solid none;
     border-width: 0.05rem;
     border-color: rgb(199, 199, 199);
 
     .p-name {
-      font-size: 1.1rem;
+      font-size: 1.0rem;
       font-weight: bold;
     }
     .p-desc {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     .p-price {
       text-align: right;
     }
   }
+}
+.price-footer {
+  font-size: 0.9rem;
 }
 </style>

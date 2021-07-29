@@ -127,12 +127,14 @@ export default class Contact extends Vue{
 <style lang="scss" scoped>
 .question {
   text-decoration: underline;
+  font-size: 0.9rem;
   &:before {
     content: 'Q ';
     color: rgb(255, 90, 90);
   }
 }
 .answer {
+  font-size: 0.9rem;
   &:before {
     content: 'A ';
     color: rgb(90, 90, 255);

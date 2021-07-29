@@ -70,9 +70,12 @@ export default class Sanitation extends Vue{
   padding-bottom: 0;
 
   p.title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: justify;
   }
+}
+.sanitation-main {
+  font-size: 1.0rem;
 }
 .sanitation-sub {
   font-size: 0.9rem;
