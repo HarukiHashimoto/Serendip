@@ -57,7 +57,8 @@ export default {
     'nuxt-buefy',
     'nuxt-webfontloader',
     'nuxt-fontawesome',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
   buefy: {
@@ -89,6 +90,15 @@ export default {
       prism: {
         theme: 'prism-themes/themes/prism-material-oceanic.css'
       }
+    }
+  },
+
+  // sitemap
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://www.tattoo-studio-serendip.com/',
+    defaults: {
+      lastmod: new Date()
     }
   },
 
