@@ -65,6 +65,11 @@ import SrHead from '@/components/common/SrHead.vue'
   }
 })
 export default class Price extends Vue{
+  head() {
+    return {
+      title: 'PRICE | 福井のタトゥースタジオ「Serendip」'
+    }
+  }
   get title (): object {
     return {titleEn: 'PRICE', titleJa: '料金一覧（税込）'}
   }

@@ -66,6 +66,11 @@ import { $content } from '@nuxt/content'
   }
 })
 export default class NewsIndex extends Vue{
+  head() {
+    return {
+      title: 'NEWS | 福井のタトゥースタジオ「Serendip」'
+    }
+  }
   get title (): object {
     return {titleEn: 'NEWS', titleJa: 'お知らせ'}
   }

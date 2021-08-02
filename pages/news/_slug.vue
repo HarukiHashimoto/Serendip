@@ -24,6 +24,18 @@ import ImageLoader from '~/components/common/ImageLoader.vue'
   }
 })
 export default class NewsPage extends Vue {
+  head() {
+    return {
+      title: this.$data.article.title + ' | 福井のタトゥースタジオ「Serendip」',
+      meta: [
+        {
+          hid: 'description',
+          meta: 'description',
+          content: this.$data.article.description
+        }
+      ]
+    }
+  }
   async asyncData({ $content, params }: Context) {
     const article = await $content('articles', params.slug).fetch()
     return { article }

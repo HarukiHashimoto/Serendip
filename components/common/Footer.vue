@@ -6,6 +6,9 @@
           <p class="title lato-bold">
             Serendip
           </p>
+          <p class="subtitle">
+            福井のタトゥースタジオ
+          </p>
         </div>
       </div>
       <div class="links columns is-mobile">
@@ -55,6 +58,10 @@
   padding: 1rem;
   padding-bottom: 0;
   color: white;
+
+  .subtitle {
+    font-size: 0.5rem;
+  }
 
   .title {
     color: white;

@@ -57,6 +57,12 @@ import ImageLoader from '~/components/common/ImageLoader.vue'
   }
 })
 export default class Sanitation extends Vue{
+  head() {
+    return {
+      title: 'SANITATION | 福井のタトゥースタジオ「Serendip」'
+    }
+  }
+
   get title (): object {
     return {titleEn: 'SANITATION', titleJa: '衛生管理'}
   }

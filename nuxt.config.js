@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Serendip | Tattoo Studio Serendip',
+    title: 'Serendip | 福井のタトゥースタジオSerendip',
     htmlAttrs: {
       lang: 'ja'
     },
@@ -9,10 +9,8 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。' },
-      { hid: 'keywords', name: 'keywords', content: '福井, tattoo, serendip, Serendip, タトゥー, タトゥースタジオ' },
-      { name: 'format-detection', content: 'telephone=no' },
 
-      { hid: 'og:site_name', property: 'og:site_name', content: 'Serendip | Tattoo Studio Serendip' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Serendip | 福井のタトゥースタジオSerendip' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://www.tattoo-studio-serendip.com' },
       { hid: 'og:title', property: 'og:title', content: 'Serendip | Tattoo Studio Serendip' },

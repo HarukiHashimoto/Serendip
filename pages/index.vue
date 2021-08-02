@@ -28,8 +28,10 @@ import Contact from "./top/-Contact.vue"
   }
 })
 export default class Top extends Vue{
-  public getImgUrl(value: string) {
-    return `https://picsum.photos/id/43${value}/1200/800`
+  head() {
+    return {
+      title: 'TOP | 福井のタトゥースタジオ「Serendip」'
+    }
   }
 
   // 記事取得

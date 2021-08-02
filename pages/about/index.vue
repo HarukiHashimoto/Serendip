@@ -5,6 +5,9 @@
     <section class="section about-content" content>
       <div class="about-main">
         <p>
+          初めまして。福井のタトゥースタジオ「Serendip」です。
+        </p>
+        <p>
           Serendipとは「偶然の幸運」
           当スタジオで、一生物であるタトゥーと予想外で幸運な出会いをして欲しい。
         </p>
@@ -43,6 +46,11 @@ import SrHead from '@/components/common/SrHead.vue'
   }
 })
 export default class About extends Vue{
+  head() {
+    return {
+      title: 'ABOUT | 福井のタトゥースタジオ「Serendip」'
+    }
+  }
   get title (): object {
     return {titleEn: 'ABOUT', titleJa: 'スタジオについて'}
   }

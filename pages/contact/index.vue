@@ -60,6 +60,11 @@ import SrHead from '@/components/common/SrHead.vue'
   }
 })
 export default class Contact extends Vue{
+  head() {
+    return {
+      title: 'CONTACT | 福井のタトゥースタジオ「Serendip」'
+    }
+  }
   get title (): object {
     return {
       faq: {titleEn: 'FAQ', titleJa: 'よくあるご質問'},
