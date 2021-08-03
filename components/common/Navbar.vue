@@ -10,8 +10,11 @@
       <b-navbar-item
         v-for="item in items"
         :key="item.title"
-        :href="item.path"
         :target="getTarget(item.isNewTab)"
+        :tag="item.tag"
+        :to="item.to"
+        :href="item.path"
+        :rel="item.rel"
       >
         <span class="lato">{{ item.title }}</span>
       </b-navbar-item>
@@ -34,38 +37,45 @@ export default class Navbar extends Vue{
       items: [
         {
           title: "TOP",
-          path: "/",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: '/'
         },
         {
           title: "ABOUT",
-          path: "/about",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: "/about"
         },
         {
           title: "NEWS",
-          path: "/news",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: "/news"
         },
         {
           title: "PRICE",
-          path: "/price",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: "/price"
         },
         {
           title: "SANITATION",
-          path: "/sanitation",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: "/sanitation"
         },
         {
           title: "CONTACT",
-          path: "/contact",
-          isNewTab: false
+          isNewTab: false,
+          tag: "router-link",
+          to: "/contact"
         },
         {
           title: "WEB STORE",
           path: "https://tatoostudioserendip.stores.jp",
-          isNewTab: true
+          isNewTab: true,
+          rel: "noopener noreferrer"
         }
       ]
     }

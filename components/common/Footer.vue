@@ -1,16 +1,18 @@
 <template>
   <footer class="footer">
     <div class="content has-text-centered">
-      <div class="hero is-small">
-        <div class="hero-body">
-          <p class="title lato-bold">
-            Serendip
-          </p>
-          <p class="subtitle">
-            福井のタトゥースタジオ
-          </p>
+      <nuxt-link to="/" >
+        <div class="hero is-small">
+          <div class="hero-body">
+            <p class="title lato-bold">
+              Serendip
+            </p>
+            <p class="subtitle">
+              福井のタトゥースタジオ
+            </p>
+          </div>
         </div>
-      </div>
+      </nuxt-link>
       <div class="links columns is-mobile">
         <div class="column is-4 lato">
           <router-link class="link" to="/">
@@ -31,7 +33,7 @@
       <div class="ex-links columns is-mobile">
         <div class="column is-3" />
         <div class="column is-3">
-          <a class="link-icon" href="https://tatoostudioserendip.stores.jp">
+          <a class="link-icon" href="https://tatoostudioserendip.stores.jp" target="_blank" rel="noopener noreferrer">
             <b-icon
               icon="store"
               class="store-icon"
@@ -39,7 +41,7 @@
           </a>
         </div>
         <div class="column is-3 insta-icon">
-          <a href="https://www.instagram.com/serendip.22">
+          <a href="https://www.instagram.com/serendip.22" target="_blank" rel="noopener noreferrer">
             <img src="@/assets/images/common/instagram.svg">
           </a>
         </div>
