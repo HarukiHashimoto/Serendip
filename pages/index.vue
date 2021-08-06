@@ -3,7 +3,7 @@
     <div id="header-image">
       <b-carousel :indicator="false">
         <b-carousel-item class="main-image-box" v-for="(item, i) in 5" :key="i">
-          <b-image class="image main-image" ratio="6by4" :src="require(`@/assets/images/top/top-${i+1}.JPG`)"></b-image>
+          <ImageLoader class="image main-image" ratio="6by4" :file="`assets/images/top/top-${i+1}.jpg`" alt="トップ画像"></ImageLoader>
           <!-- <img class="main-title" src="@/assets/images/top/main_title.svg" /> -->
         </b-carousel-item>
       </b-carousel>
@@ -20,11 +20,13 @@ import { Component, Vue } from "nuxt-property-decorator"
 import { Context } from '@nuxt/types'
 import News from "./top/-News.vue"
 import Contact from "./top/-Contact.vue"
+import ImageLoader from "~/components/common/ImageLoader.vue"
 
 @Component({
   components: {
     News,
-    Contact
+    Contact,
+    ImageLoader
   }
 })
 export default class Top extends Vue{

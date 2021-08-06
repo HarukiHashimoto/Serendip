@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ImageLoader file="assets/images/sanitation/top.JPG" />
+    <ImageLoader file="assets/images/sanitation/top.jpg" alt="Sanitationトップ画像" />
     <SrHead :title="title" />
     <section class="section sanitation-head" content>
       <section class="hero is-dark is-small">

@@ -1,6 +1,6 @@
 <!-- ~/components/ImageLoader.vue -->
 <template>
-  <b-image :src="require(`~/${this.file}`)" :ratio="ratio" />
+  <b-image :src="require(`~/${this.file}`)" :ratio="ratio" :alt="alt" />
 </template>
 
 <script lang="ts">
@@ -13,5 +13,8 @@ export default class ImageLoader extends Vue {
 
   @Prop({ type: String, required: false, default: '4by3' })
   public ratio: string
+
+  @Prop({ type: String, required: false, default: 'alt'})
+  public alt: string
 }
 </script>

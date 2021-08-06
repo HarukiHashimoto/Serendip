@@ -50,12 +50,10 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import ImageLoader from '~/components/common/ImageLoader.vue'
 import SrHead from '@/components/common/SrHead.vue'
 
 @Component({
   components: {
-    ImageLoader,
     SrHead
   }
 })

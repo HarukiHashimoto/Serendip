@@ -33,7 +33,7 @@
       <div class="ex-links columns is-mobile">
         <div class="column is-3" />
         <div class="column is-3">
-          <a class="link-icon" href="https://tatoostudioserendip.stores.jp" target="_blank" rel="noopener noreferrer">
+          <a class="link-icon" href="https://tatoostudioserendip.stores.jp" target="_blank" rel="noopener noreferrer" title="store">
             <b-icon
               icon="store"
               class="store-icon"
@@ -41,8 +41,8 @@
           </a>
         </div>
         <div class="column is-3 insta-icon">
-          <a href="https://www.instagram.com/serendip.22" target="_blank" rel="noopener noreferrer">
-            <img src="@/assets/images/common/instagram.svg">
+          <a href="https://www.instagram.com/serendip.22" target="_blank" rel="noopener noreferrer" title="instagram">
+            <img src="@/assets/images/common/instagram.svg" alt="instagram">
           </a>
         </div>
         <div class="column is-3" />

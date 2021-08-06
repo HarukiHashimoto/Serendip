@@ -1,7 +1,7 @@
 <template>
   <section class="article section content">
     <section class="article-head">
-      <ImageLoader :file="article.img" />
+      <ImageLoader :file="article.img" :alt="article.alt" />
       <section class="section article-title">
         <p class="title">{{ article.title }}</p>
         <p class="subtitle">{{ article.date }}</p>

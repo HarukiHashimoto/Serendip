@@ -7,7 +7,7 @@
           <nuxt-link :to="'/news/'+ n.slug" class="article-card">
           <div class="card">
             <div class="card-image">
-              <ImageLoader :file="n.img" />
+              <ImageLoader :file="n.img" :alt="n.alt" />
             </div>
             <div class="card-content">
               <div class="columns">
