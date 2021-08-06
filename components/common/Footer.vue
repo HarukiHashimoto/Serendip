@@ -63,6 +63,7 @@
 
   .subtitle {
     font-size: 0.5rem;
+    color: white;
   }
 
   .title {
