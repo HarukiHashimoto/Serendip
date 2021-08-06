@@ -3,7 +3,7 @@
     <div id="header-image">
       <b-carousel :indicator="false">
         <b-carousel-item class="main-image-box" v-for="(item, i) in 5" :key="i">
-          <ImageLoader class="image main-image" ratio="6by4" :file="`assets/images/top/top-${i+1}.jpg`" alt="トップ画像"></ImageLoader>
+          <ImageLoader class="image main-image" ratio="6by4" :file="`assets/images/top/top-${i+1}.JPG`" alt="トップ画像"></ImageLoader>
           <!-- <img class="main-title" src="@/assets/images/top/main_title.svg" /> -->
         </b-carousel-item>
       </b-carousel>

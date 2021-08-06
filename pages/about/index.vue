@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ImageLoader file="assets/images/about/top.jpg" alt="Aboutトップ画像" />
+    <ImageLoader file="assets/images/about/top.JPG" alt="Aboutトップ画像" />
     <SrHead :title="title" />
     <section class="section about-content" content>
       <div class="about-main">

@@ -15,7 +15,7 @@ export default {
       { hid: 'og:url', property: 'og:url', content: 'https://www.tattoo-studio-serendip.com' },
       { hid: 'og:title', property: 'og:title', content: 'Serendip | Tattoo Studio Serendip' },
       { hid: 'og:description', property: 'og:description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。' },
-      { hid: 'og:image', property: 'og:image', content: 'https://www.tattoo-studio-serendip.com/_nuxt/img/3e13ed3.jpg' },
+      { hid: 'og:image', property: 'og:image', content: 'https://www.tattoo-studio-serendip.com/_nuxt/img/3e13ed3.JPG' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image' },
