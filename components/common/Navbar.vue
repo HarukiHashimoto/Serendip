@@ -2,8 +2,7 @@
   <b-navbar collapsible=true>
     <template #brand>
       <b-navbar-item tag="router-link" :to="{ path: '/' }">
-        <h1 class="title lato-bold">Serendip</h1>
-        <!-- <ImageLoader file="assets/images/common/brand.JPG" /> -->
+        <img src="~/assets/images/common/brand.png" alt="TATTOO STUDIO SERENDIP">
       </b-navbar-item>
     </template>
     <template #end>
