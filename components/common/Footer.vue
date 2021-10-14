@@ -41,7 +41,7 @@
           </a>
         </div>
         <div class="column is-3 insta-icon">
-          <a href="https://www.instagram.com/serendip.22" target="_blank" rel="noopener noreferrer" title="instagram">
+          <a href="https://www.instagram.com/tattoostudioserendip" target="_blank" rel="noopener noreferrer" title="instagram">
             <img src="@/assets/images/common/instagram.svg" alt="instagram">
           </a>
         </div>
