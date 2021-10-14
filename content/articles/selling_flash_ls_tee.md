@@ -15,11 +15,9 @@ alt: FLASH L/S TEE
 FLASH L/S TEE
 
 ご予約は
-
 **10/16(sat)から10/30(sat)23:59まで**
-
 となります。
 
 ※受注生産となりますのでご了承下さい。
 
-詳細・ご購入は[STORESページ](https://tatoostudioserendip.stores.jp/items/6108bf75a92a786a0c99b22c)からお願いします。
+詳細・ご購入は[STORESページ](https://tatoostudioserendip.stores.jp/items/616824cd4385a50f63f22c72)からお願いします。
