@@ -103,12 +103,12 @@ export default class Price extends Vue{
     {
       name: '1時間',
       desc: '',
-      price: '￥8,000〜'
+      price: '￥10,000〜'
     },
     {
       name: '以降30分毎',
       desc: '',
-      price: '￥4,000〜'
+      price: '￥5,000〜'
     },
   ]
 }
