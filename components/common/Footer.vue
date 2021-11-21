@@ -10,6 +10,9 @@
             <p class="subtitle">
               福井のタトゥースタジオ
             </p>
+            <p class="subtitle">
+              〒910-0023 福井市順化2丁目26-19 elle.bld 201
+            </p>
           </div>
         </div>
       </nuxt-link>
