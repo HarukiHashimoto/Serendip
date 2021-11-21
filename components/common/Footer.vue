@@ -10,12 +10,12 @@
             <p class="subtitle">
               福井のタトゥースタジオ
             </p>
-            <p class="subtitle">
-              〒910-0023 福井市順化2丁目26-19 elle.bld 201
-            </p>
           </div>
         </div>
       </nuxt-link>
+      <p class="subtitle">
+        〒910-0023 福井市順化2丁目26-19 elle.bld 201
+      </p>
       <div class="links columns is-mobile">
         <div class="column is-4 lato">
           <router-link class="link" to="/">
