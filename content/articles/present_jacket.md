@@ -17,4 +17,4 @@ alt: 【スタジオ移転OPENプレゼント】1116 Coach Jacketを抽選で10�
 
 残りを下記STORESで販売します。
 ※数量限定販売、並びに受注生産となりますのでご了承下さい。
-詳細・ご購入は[**STORESページ**](https://tatoostudioserendip.stores.jp/items/618d4f5e2b3ca131989494be)からお願いします。
+詳細・ご購入は[**STORESページ**](https://tatoostudioserendip.stores.jp/items/61a24488c725862734d3527)からお願いします。
