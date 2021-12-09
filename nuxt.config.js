@@ -93,14 +93,31 @@ export default {
 
   // sitemap
   sitemap: {
-    path: '/sitemap.xml',
     hostname: 'https://www.tattoo-studio-serendip.com/',
-    defaults: {
-      lastmod: new Date()
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+
+      const articles = await $content('articles')
+        .only(['path'])
+        .fetch()
+
+      return articles.map((a) => a.path)
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel: {
+      babelrc: false,
+      compact: false
+    },
+    extend (config, ctx) {
+      config.node = {
+        fs: "empty"
+      },
+      config.externals = {
+        fsevents: "require('fsevents')"
+      }
+    }
   }
 }

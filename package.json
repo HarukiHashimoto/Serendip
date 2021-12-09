@@ -13,6 +13,8 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.15.1",
+    "fs": "^0.0.1-security",
+    "net": "^1.0.2",
     "nuxt": "^2.15.7",
     "nuxt-buefy": "^0.4.8",
     "nuxt-fontawesome": "^0.4.0",
@@ -29,5 +31,8 @@
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "imagemin-pngquant": "^9.0.2"
-  }
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+}
 }
