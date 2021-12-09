@@ -101,7 +101,7 @@ export default {
         .only(['path'])
         .fetch()
 
-      return articles.map((a) => a.path)
+      return articles.map((a) => a.path.replace('/articles/', '/news/'))
     }
   },
 
