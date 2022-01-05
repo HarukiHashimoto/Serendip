@@ -42,11 +42,17 @@ export default class Top extends Vue{
   // 記事取得
   news = {}  //初期化
   async asyncData({ $content, params, error }: Context) {
+    let date = new Date()
+    const formatDate = (date: Date) => {
+      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
+    }
     const news = await $content('articles')
     .only(['title', 'slug', 'date', 'img'])
+    .where({ 'date': {'$lte': formatDate(date)} })
     .sortBy('date', 'desc')
     .limit(2)
     .fetch()
+    console.log(news)
     return { news }
   }
 }
