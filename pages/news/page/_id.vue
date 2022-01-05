@@ -22,7 +22,7 @@
           <b-pagination
             :total="count"
             v-model="current"
-            simple="true"
+            :simple="true"
             per-page="6"
             icon-prev='chevron-left'
             icon-next='chevron-right'
@@ -85,21 +85,25 @@ export default class NewsIndex extends Vue{
   articles = []  //初期化
   count = 0
   async asyncData({ redirect, store, $content, params, error }: Context) {
+    let date = new Date()
+    const formatDate = (date: Date) => {
+      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
+    }
     // ページ数を超えたリクエストはリダイレクト
-    const count = await $content('articles').only('title').fetch()
+    const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
     const current = Number(params.id)
     const indexPerPage = 6
     if(current > Math.ceil( count.length / indexPerPage )) redirect('/news')
     if(current <= 0) redirect('/news')
 
     const from = indexPerPage * (current - 1)
-    const to = indexPerPage * current
 
     const articles = await $content('articles')
     .only(['title', 'slug', 'date', 'img'])
+    .where({ 'date': {'$lte': formatDate(date)} })
     .sortBy('date', 'desc')
     .skip(from)
-    .limit(to)
+    .limit(indexPerPage)
     .fetch()
     return { articles, count: count.length, current  }
   }
