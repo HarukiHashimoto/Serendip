@@ -56,7 +56,8 @@ export default {
     'nuxt-webfontloader',
     'nuxt-fontawesome',
     '@nuxt/content',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    "@nuxtjs/axios",
   ],
 
   buefy: {
