@@ -25,7 +25,7 @@
           per-page="6"
           icon-prev='chevron-left'
           icon-next='chevron-right'
-          simple="true"
+          :simple="true"
           >
             <template #previous="props">
               <b-pagination-button
@@ -78,10 +78,15 @@ export default class NewsIndex extends Vue{
   articles = []  //初期化
   current = 1
   async asyncData({ $content, params, error }: Context) {
-    const count = await $content('articles').only('title').fetch()
+    let date = new Date()
+    const formatDate = (date: Date) => {
+      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
+    }
+    const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
     const indexPerPage = 6
     const articles = await $content('articles')
     .only(['title', 'slug', 'date', 'img'])
+    .where({ 'date': {'$lte': formatDate(date)} })
     .sortBy('date', 'desc')
     .skip(0)
     .limit(indexPerPage)
