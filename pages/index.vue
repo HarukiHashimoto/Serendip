@@ -10,6 +10,7 @@
     </div>
     <div class="contents">
       <News :news="news" />
+      <Gallery />
       <Contact />
     </div>
   </div>
@@ -19,12 +20,14 @@
 import { Component, Vue } from "nuxt-property-decorator"
 import { Context } from '@nuxt/types'
 import News from "./top/-News.vue"
+import Gallery from "./top/-Gallery.vue"
 import Contact from "./top/-Contact.vue"
 import ImageLoader from "~/components/common/ImageLoader.vue"
 
 @Component({
   components: {
     News,
+    Gallery,
     Contact,
     ImageLoader
   }
@@ -49,7 +52,6 @@ export default class Top extends Vue{
     .sortBy('date', 'desc')
     .limit(2)
     .fetch()
-    console.log(news)
     return { news }
   }
 }
