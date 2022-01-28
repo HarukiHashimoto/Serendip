@@ -18,6 +18,7 @@
             〒910-0023 福井市順化2丁目26-19 elle.bld 201
           </a>
         </p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.081916123602!2d136.21118201569635!3d36.06710601631882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8bf18f14ab3e7%3A0x99d48111e728614a!2sTATTOO%20STUDIO%20SERENDIP!5e0!3m2!1sja!2sjp!4v1643379026863!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       <div class="links columns is-mobile">
         <div class="column is-4 lato">
           <router-link class="link" to="/">
