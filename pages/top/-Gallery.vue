@@ -82,7 +82,6 @@ export default class TopGallary extends Vue{
 
   openModal(feed: any) {
     this.showModal = true
-    console.log(feed)
     const caption = feed.caption.slice(0, 100) + '……'
     const mediaUrl = feed.media_type === 'VIDEO'
      ? feed.thumbnail_url
