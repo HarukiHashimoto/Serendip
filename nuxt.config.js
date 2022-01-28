@@ -56,7 +56,8 @@ export default {
     'nuxt-webfontloader',
     'nuxt-fontawesome',
     '@nuxt/content',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    "@nuxtjs/axios",
   ],
 
   buefy: {
@@ -119,5 +120,19 @@ export default {
         fsevents: "require('fsevents')"
       }
     }
+  },
+
+  publicRuntimeConfig: {
+    // For Instagram
+    targetUser: process.env.TARGET_USER,
+    instagramBusinessId: process.env.NODE_ENV !== 'production' ? process.env.INSTAGRAM_BUSINESS_ID : undefined,
+    accessToken: process.env.NODE_ENV !== 'production' ? process.env.ACCESS_TOKEN : undefined
+  },
+
+  privateRuntimeConfig: {
+    // For Instagram
+    targetUser: process.env.TARGET_USER,
+    instagramBusinessId: process.env.INSTAGRAM_BUSINESS_ID,
+    accessToken: process.env.ACCESS_TOKEN
   }
 }
