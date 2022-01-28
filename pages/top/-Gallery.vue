@@ -32,7 +32,13 @@
         </div>
         <div class="card-content">
           <div class="content">
-            {{ feed.caption }}
+            <p>{{ feed.caption }}</p>
+            <div class="block">
+              <b-icon icon="heart" />
+              {{ feed.likeCount }}
+              <b-icon icon="comment" />
+              {{ feed.commentsCount }}
+            </div>
           </div>
         </div>
       </div>
@@ -63,10 +69,12 @@ export default class TopGallary extends Vue{
   async fetch() {
     const businessID = this.$config.instagramBusinessId
     const accessToken = this.$config.accessToken
-    await this.$store.dispatch('fetchInstagramFeeds', {
-      businessID,
-      accessToken
-    })
+    if (typeof businessID !== 'undefined' && typeof accessToken !== 'undefined') {
+      await this.$store.dispatch('fetchInstagramFeeds', {
+        businessID,
+        accessToken
+      })
+    }
   }
 
   showModal = false
@@ -79,7 +87,15 @@ export default class TopGallary extends Vue{
      ? feed.thumbnail_url
      : feed.media_url
     const permalink = feed.permalink
-    this.feed = { caption, mediaUrl, permalink }
+    const likeCount = feed.like_count
+    const commentsCount = feed.comments_count
+    this.feed = {
+      caption,
+      mediaUrl,
+      permalink,
+      likeCount,
+      commentsCount
+    }
   }
 
   openFeedLink(url: string) {

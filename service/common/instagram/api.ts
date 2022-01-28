@@ -11,7 +11,6 @@ export const fetchFeeds = async (businessID: string, accessToken: string, limit:
 
   return await axios(requestConfig)
     .then(({ data }) => {
-      // console.log('data', data.media.data)
       return data.media.data
     })
     .catch((e) => {
