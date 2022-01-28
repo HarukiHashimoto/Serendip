@@ -17,7 +17,4 @@ export const fetchFeeds = async (businessID: string, accessToken: string, limit:
     .catch((e) => {
       console.log('error:', e)
     })
-    .finally(() => {
-      console.log('end')
-    })
 }

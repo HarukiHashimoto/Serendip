@@ -9,7 +9,7 @@
 ツール提供者：Google LLC
 Google Analytics利用規約
 Googleプライバシーポリシー
-Google Analyticsは、当社が発行するCookieを利用して、お客様の当社ウェブの利用状況（アクセス状況、トラフィック、ルーティング等）を分析します。当社は、Google社からその分析結果を受け取り、お客様の利用状況を把握します。詳細については、以下のURLをご確認ください。
+Google Analyticsは、当サイトが発行するCookieを利用して、お客様の当サイトの利用状況（アクセス状況、トラフィック、ルーティング等）を分析します。当サイトは、Google社からその分析結果を受け取り、お客様の利用状況を把握します。詳細については、以下のURLをご確認ください。
 https://policies.google.com/technologies/partner-sites?hl=ja
 Google Analyticsに関する情報は以下のサイトからも入手できます。
 https://support.google.com/analytics/answer/6004245
