@@ -52,7 +52,6 @@ export default class Top extends Vue{
     .sortBy('date', 'desc')
     .limit(2)
     .fetch()
-    console.log(news)
     return { news }
   }
 }

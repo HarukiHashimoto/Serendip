@@ -1,13 +1,13 @@
 <template>
   <div>
     <SrHead :title="title"/>
+    {{ feeds }}
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "nuxt-property-decorator";
+import { Component, Vue } from "nuxt-property-decorator";
 import SrHead from '@/components/common/SrHead.vue'
-import axios from 'axios'
 
 @Component({
   components: {
@@ -15,15 +15,21 @@ import axios from 'axios'
   }
 })
 export default class TopGallary extends Vue{
-
   get title (): object {
     return {titleEn: 'GALLERY', titleJa: 'ギャラリー'}
   }
-  async asyncData({ $axios }: any) {
-    const url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode=1040032'
-    const response = await $axios.$get(url)
-    console.log(response)
-    console.log('aaa')
+
+  get feeds(): object {
+    return this.$store.state.instagramFeeds
+  }
+
+  async fetch() {
+    const businessID = this.$config.instagramBusinessId
+    const accessToken = this.$config.accessToken
+    await this.$store.dispatch('fetchInstagramFeeds', {
+      businessID,
+      accessToken
+    })
   }
 }
 </script>
