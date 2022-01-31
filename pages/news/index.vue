@@ -2,7 +2,8 @@
   <section>
     <SrHead :title="title" />
     <section class="section news-index">
-      <div class="columns is-multiline">
+      {{ feeds }}
+      <!-- <div class="columns is-multiline">
         <div v-for="a in articles" :key="a.slug" class="column is-4">
           <nuxt-link :to="'/news/'+ a.slug" class="article-card">
           <div class="card">
@@ -46,14 +47,14 @@
             </template>
           </b-pagination>
         </section>
-      </div>
+      </div> -->
     </section>
   </section>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
+// import { Context } from '@nuxt/types'
 import SrHead from '@/components/common/SrHead.vue'
 import ImageLoader from '~/components/common/ImageLoader.vue'
 
@@ -77,21 +78,32 @@ export default class NewsIndex extends Vue{
   // 記事取得
   articles = []  //初期化
   current = 1
-  async asyncData({ $content, params, error }: Context) {
-    let date = new Date()
-    const formatDate = (date: Date) => {
-      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
-    }
-    const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
-    const indexPerPage = 6
-    const articles = await $content('articles')
-    .only(['title', 'slug', 'date', 'img'])
-    .where({ 'date': {'$lte': formatDate(date)} })
-    .sortBy('date', 'desc')
-    .skip(0)
-    .limit(indexPerPage)
-    .fetch()
-    return { articles, count: count.length }
+  // async asyncData({ $content, params, error }: Context) {
+  //   let date = new Date()
+  //   const formatDate = (date: Date) => {
+  //     return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
+  //   }
+  //   const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
+  //   const indexPerPage = 6
+  //   const articles = await $content('articles')
+  //   .only(['title', 'slug', 'date', 'img'])
+  //   .where({ 'date': {'$lte': formatDate(date)} })
+  //   .sortBy('date', 'desc')
+  //   .skip(0)
+  //   .limit(indexPerPage)
+  //   .fetch()
+  //   return { articles, count: count.length }
+  // }
+
+  async fetch() {
+    const page = Number(this.$route.params.p || '1')
+    const limit = 6
+    await this.$store.dispatch('microcms/fetchFeedsByPage', { limit, page })
+    console.log(this.$store.state.microcms.cmsFeeds)
+  }
+
+  get feeds (): any {
+    return this.$store.state.microcms.cmsFeeds
   }
 }
 </script>

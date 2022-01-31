@@ -2,7 +2,7 @@
   <section>
     <SrHead :title="title" />
     <section class="section news-index">
-      <div class="columns is-multiline">
+      <!-- <div class="columns is-multiline">
         <div v-for="a in articles" :key="a.slug" class="column is-4">
           <nuxt-link :to="'/news/'+ a.slug" class="article-card">
           <div class="card">
@@ -47,17 +47,17 @@
             </template>
           </b-pagination>
         </section>
-      </div>
+      </div> -->
     </section>
   </section>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
+// import { Context } from '@nuxt/types'
 import SrHead from '@/components/common/SrHead.vue'
 import ImageLoader from '~/components/common/ImageLoader.vue'
-import { $content } from '@nuxt/content'
+// import { $content } from '@nuxt/content'
 
 @Component({
   components: {
@@ -84,29 +84,29 @@ export default class NewsIndex extends Vue{
   // 記事取得
   articles = []  //初期化
   count = 0
-  async asyncData({ redirect, store, $content, params, error }: Context) {
-    let date = new Date()
-    const formatDate = (date: Date) => {
-      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
-    }
-    // ページ数を超えたリクエストはリダイレクト
-    const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
-    const current = Number(params.id)
-    const indexPerPage = 6
-    if(current > Math.ceil( count.length / indexPerPage )) redirect('/news')
-    if(current <= 0) redirect('/news')
+  // async asyncData({ redirect, store, $content, params, error }: Context) {
+  //   let date = new Date()
+  //   const formatDate = (date: Date) => {
+  //     return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
+  //   }
+  //   // ページ数を超えたリクエストはリダイレクト
+  //   const count = await $content('articles').only('title').where({ 'date': {'$lte': formatDate(date)} }).fetch()
+  //   const current = Number(params.id)
+  //   const indexPerPage = 6
+  //   if(current > Math.ceil( count.length / indexPerPage )) redirect('/news')
+  //   if(current <= 0) redirect('/news')
 
-    const from = indexPerPage * (current - 1)
+  //   const from = indexPerPage * (current - 1)
 
-    const articles = await $content('articles')
-    .only(['title', 'slug', 'date', 'img'])
-    .where({ 'date': {'$lte': formatDate(date)} })
-    .sortBy('date', 'desc')
-    .skip(from)
-    .limit(indexPerPage)
-    .fetch()
-    return { articles, count: count.length, current  }
-  }
+  //   const articles = await $content('articles')
+  //   .only(['title', 'slug', 'date', 'img'])
+  //   .where({ 'date': {'$lte': formatDate(date)} })
+  //   .sortBy('date', 'desc')
+  //   .skip(from)
+  //   .limit(indexPerPage)
+  //   .fetch()
+  //   return { articles, count: count.length, current  }
+  // }
 
   get firstArticles() {
     const fa = this.articles.filter((element, index) => index < 3)

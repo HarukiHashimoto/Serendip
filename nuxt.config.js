@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export default {
   ssr: true,
   target: 'server',
@@ -44,6 +46,7 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@aceforth/nuxt-optimized-images',
+    'nuxt-microcms-module'
   ],
 
   optimizedImages: {
@@ -57,7 +60,6 @@ export default {
     'nuxt-buefy',
     'nuxt-webfontloader',
     'nuxt-fontawesome',
-    '@nuxt/content',
     '@nuxtjs/sitemap',
     "@nuxtjs/axios",
   ],
@@ -85,26 +87,28 @@ export default {
     }
   },
 
-  // nuxt-content
-  content: {
-    markdown: {
-      prism: {
-        theme: 'prism-themes/themes/prism-material-oceanic.css'
-      }
-    }
-  },
-
   // sitemap
   sitemap: {
-    hostname: 'https://www.tattoo-studio-serendip.com/',
-    routes: async () => {
-      const { $content } = require('@nuxt/content')
+    hostname: 'https://www.tattoo-studio-serendip.com/'
+  },
 
-      const articles = await $content('articles')
-        .only(['path'])
-        .fetch()
+  // microCMS
+  microcms: {
+    options: {
+      serviceDomain: process.env.MICRO_CMS_SERVICE_DOMAIN,
+      apiKey: process.env.MICRO_CMS_API_KEY,
+    },
+    mode: process.env.NODE_ENV === 'production' ? 'server' : 'all',
+  },
 
-      return articles.map((a) => a.path.replace('/articles/', '/news/'))
+  // router
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/news/page/:p',
+        component: resolve(__dirname, 'pages/news/index.vue'),
+        name: 'news-page',
+      })
     }
   },
 
@@ -122,6 +126,26 @@ export default {
         fsevents: "require('fsevents')"
       }
     }
+  },
+
+  generate: {
+    async routes() {
+      const limit = 6
+      const range = (start, end) =>
+        [...Array(end - start + 1)].map((_, i) => start + i)
+
+      // NEWS一覧のページング
+      const pages = await axios
+        .get(`https://tattoostudioserendip.microcms.io/api/v1/blog?limit=0`, {
+          headers: { 'X-MICROCMS-API-KEY': process.env.MICRO_CMS_API_KEY },
+        })
+        .then((res) =>
+          range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
+            route: `/news/page/${p}`,
+          }))
+        )
+      return pages
+    },
   },
 
   publicRuntimeConfig: {

@@ -1,6 +1,6 @@
 <template>
   <section class="article section content">
-    <section class="article-head">
+    <!-- <section class="article-head">
       <ImageLoader :file="article.img" :alt="article.alt" />
       <section class="section article-title">
         <p class="title">{{ article.title }}</p>
@@ -9,13 +9,13 @@
     </section>
     <section class="article-content">
       <nuxt-content :document="article" />
-    </section>
+    </section> -->
+    {{ feed }}
   </section>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
-import { Context } from '@nuxt/types'
 import ImageLoader from '~/components/common/ImageLoader.vue'
 
 @Component({
@@ -24,21 +24,25 @@ import ImageLoader from '~/components/common/ImageLoader.vue'
   }
 })
 export default class NewsPage extends Vue {
-  head() {
-    return {
-      title: this.$data.article.title + ' | 福井のタトゥースタジオ「Serendip」',
-      meta: [
-        {
-          hid: 'description',
-          meta: 'description',
-          content: this.$data.article.description
-        }
-      ]
-    }
+  // head() {
+  //   return {
+  //     title: this.$data.article.title + ' | 福井のタトゥースタジオ「Serendip」',
+  //     meta: [
+  //       {
+  //         hid: 'description',
+  //         meta: 'description',
+  //         content: this.$data.article.description
+  //       }
+  //     ]
+  //   }
+  // }
+  async fetch() {
+    console.log(this.$route.params)
+    await this.$store.dispatch('microcms/fetch', this.$route.params.slug)
   }
-  async asyncData({ $content, params }: Context) {
-    const article = await $content('articles', params.slug).fetch()
-    return { article }
+  get feed () {
+    console.log(this.$store.state.microcms.feed)
+    return this.$store.state.microcms.feed
   }
 }
 </script>
