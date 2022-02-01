@@ -2,14 +2,19 @@
   <div id="page">
     <div id="header-image">
       <b-carousel :indicator="false">
-        <b-carousel-item class="main-image-box" v-for="(item, i) in 5" :key="i">
-          <ImageLoader class="image main-image" ratio="6by4" :file="`assets/images/top/top-${i+1}.JPG`" alt="トップ画像"></ImageLoader>
-          <!-- <img class="main-title" src="@/assets/images/top/main_title.svg" /> -->
+        <b-carousel-item class="main-image-box" v-for="image in topImages" :key="image">
+          <ImageLoader
+            class="image main-image"
+            ratio="6by4"
+            :file="image"
+            alt="トップ画像"
+            :isUrl="true"
+          />
         </b-carousel-item>
       </b-carousel>
     </div>
     <div class="contents">
-      <News :news="news" />
+      <News />
       <Gallery />
       <Contact />
     </div>
@@ -18,7 +23,6 @@
 
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator"
-import { Context } from '@nuxt/types'
 import News from "./top/-News.vue"
 import Gallery from "./top/-Gallery.vue"
 import Contact from "./top/-Contact.vue"
@@ -39,20 +43,12 @@ export default class Top extends Vue{
     }
   }
 
-  // 記事取得
-  news = {}  //初期化
-  async asyncData({ $content, params, error }: Context) {
-    let date = new Date()
-    const formatDate = (date: Date) => {
-      return date.getFullYear() + '.' + ('0' + (date.getMonth() + 1)).slice(-2) + '.' + ('0' + date.getDate()).slice(-2)
-    }
-    const news = await $content('articles')
-    .only(['title', 'slug', 'date', 'img'])
-    .where({ 'date': {'$lte': formatDate(date)} })
-    .sortBy('date', 'desc')
-    .limit(2)
-    .fetch()
-    return { news }
+  get topImages (): any {
+    return this.$store.state.microcms.topImages
+  }
+
+  async fetch() {
+    await this.$store.dispatch('microcms/fetchTopImages')
   }
 }
 </script>

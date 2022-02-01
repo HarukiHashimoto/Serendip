@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ImageLoader file="assets/images/about/top.JPG" alt="Aboutトップ画像" />
+    <ImageLoader :file="topImage" alt="Aboutトップ画像" :isUrl="true" />
     <SrHead :title="title" />
     <section class="section about-content" content>
       <div class="about-main">
@@ -53,6 +53,14 @@ export default class About extends Vue{
   }
   get title (): object {
     return {titleEn: 'ABOUT', titleJa: 'スタジオについて'}
+  }
+
+  async fetch() {
+    await this.$store.dispatch('microcms/fetchTopImages')
+  }
+
+  get topImage () : string {
+    return this.$store.state.microcms.aboutImage
   }
 }
 </script>

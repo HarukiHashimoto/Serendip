@@ -3,16 +3,20 @@
     <SrHead :title="title"/>
     <section class="section news-index">
       <div class="columns">
-        <div v-for="n in news" :key="n.slug" class="column">
-          <nuxt-link :to="'/news/'+ n.slug" class="article-card">
+        <div v-for="feed in feeds" :key="feed.id" class="column">
+          <nuxt-link :to="'/news/'+ feed.id" class="article-card">
           <div class="card">
             <div class="card-image">
-              <ImageLoader :file="n.img" :alt="n.alt" />
+              <ImageLoader
+                :file="feed.ogimage.url"
+                :alt="feed.title"
+                ratio="1by1"
+                :isUrl="true" />
             </div>
             <div class="card-content">
               <div class="columns">
-                <div class="column is-8 news-title">{{ n.title }}</div>
-                <div class="column is-4 news-date">{{ n.date }}</div>
+                <div class="column is-8 news-title">{{ feed.title }}</div>
+                <div class="column is-4 news-date">{{ feed.publishedAt }}</div>
               </div>
             </div>
           </div>
@@ -44,8 +48,13 @@ export default class TopNews extends Vue{
     return {titleEn: 'NEWS', titleJa: 'お知らせ'}
   }
 
-  @Prop({ required: true })
-  public news!: object
+  async fetch() {
+    await this.$store.dispatch('microcms/fetchFeeds', 2)
+  }
+
+  get feeds (): object[] {
+    return this.$store.state.microcms.cmsFeeds
+  }
 }
 </script>
 
