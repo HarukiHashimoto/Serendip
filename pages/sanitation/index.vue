@@ -1,6 +1,6 @@
 <template>
   <section>
-    <ImageLoader file="assets/images/sanitation/top.JPG" alt="Sanitationトップ画像" />
+    <ImageLoader :file="topImage" alt="Sanitationトップ画像" :isUrl="true" />
     <SrHead :title="title" />
     <section class="section sanitation-head" content>
       <section class="hero is-dark is-small">
@@ -61,6 +61,14 @@ export default class Sanitation extends Vue{
     return {
       title: 'SANITATION | 福井のタトゥースタジオ「Serendip」'
     }
+  }
+
+  async fetch() {
+    await this.$store.dispatch('microcms/fetchTopImages')
+  }
+
+  get topImage (): string {
+    return this.$store.state.microcms.sanitationImage
   }
 
   get title (): object {
