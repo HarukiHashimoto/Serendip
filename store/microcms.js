@@ -2,7 +2,7 @@ const convertJST = (ust) => {
   let time = new Date(ust)
   time.setHours(time.getHours() + 9)
   return time.toLocaleDateString('ja-JP')
-  }
+}
 
 export const state = () => ({
   cmsFeeds: [],
