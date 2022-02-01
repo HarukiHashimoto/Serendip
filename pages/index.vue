@@ -2,12 +2,13 @@
   <div id="page">
     <div id="header-image">
       <b-carousel :indicator="false">
-        <b-carousel-item class="main-image-box" v-for="(item, i) in 5" :key="i">
+        <b-carousel-item class="main-image-box" v-for="image in topImages" :key="image">
           <ImageLoader
             class="image main-image"
             ratio="6by4"
-            :file="`assets/images/top/top-${i+1}.JPG`"
+            :file="image"
             alt="トップ画像"
+            :isUrl="true"
           />
         </b-carousel-item>
       </b-carousel>
@@ -40,6 +41,14 @@ export default class Top extends Vue{
     return {
       title: 'TOP | 福井のタトゥースタジオ「Serendip」'
     }
+  }
+
+  get topImages (): any {
+    return this.$store.state.microcms.topImages
+  }
+
+  async fetch() {
+    await this.$store.dispatch('microcms/fetchTopImages')
   }
 }
 </script>

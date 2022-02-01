@@ -13,7 +13,16 @@ export const state = () => ({
     description: '',
     thumbnail: ''
   },
-  totalCount: 0
+  totalCount: 0,
+  topImages: {
+    image1: '',
+    image2: '',
+    image3: '',
+    image4: '',
+    image5: ''
+  },
+  aboutImage: '',
+  sanitationImage: ''
 });
 
 export const mutations = {
@@ -25,15 +34,24 @@ export const mutations = {
     state.cmsFeeds = feeds
   },
   setFeed(state, feed) {
-    state.feed.publishAt = feed.publishAt
+    state.feed.publishedAt = convertJST(feed.publishedAt)
     state.feed.title = feed.title
     state.feed.body = feed.body
     state.feed.description = feed.description
-    state.feed.thumbnail = feed.thumbnail
+    state.feed.thumbnail = feed.ogimage.url
 
   },
   setTotalCount(state, totalCount) {
     state.totalCount = totalCount
+  },
+  setTopImages(state, topImages) {
+    state.topImages.image1 = topImages.topImage1.url
+    state.topImages.image2 = topImages.topImage2.url
+    state.topImages.image3 = topImages.topImage3.url
+    state.topImages.image4 = topImages.topImage4.url
+    state.topImages.image5 = topImages.topImage5.url
+    state.aboutImage = topImages.aboutImage.url
+    state.sanitationImage = topImages.sanitationImage.url
   }
 };
 
@@ -70,6 +88,13 @@ export const actions = {
       contentId: id,
     })
     commit('setFeed', feed)
+  },
+
+  async fetchTopImages({ commit }) {
+    const topImages = await this.$microcms.get({
+      endpoint: 'top-images'
+    })
+    commit('setTopImages', topImages)
   }
 };
 

@@ -11,7 +11,7 @@ export default class ImageLoader extends Vue {
   @Prop({ type: String, required: true })
   public file!: string
 
-  @Prop({ type: String, required: false, default: '4by3' })
+  @Prop({ type: String, required: false })
   public ratio: string
 
   @Prop({ type: String, required: false, default: 'alt'})

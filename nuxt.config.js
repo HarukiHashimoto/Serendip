@@ -1,6 +1,9 @@
 import axios from 'axios'
 
 export default {
+  server: {
+    port: 9999
+  },
   ssr: true,
   target: 'server',
   // Global page headers: https://go.nuxtjs.dev/config-head

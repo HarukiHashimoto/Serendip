@@ -7,7 +7,11 @@
           <nuxt-link :to="'/news/'+ feed.id" class="article-card">
           <div class="card">
             <div class="card-image">
-              <ImageLoader :file="feed.ogimage.url" :alt="feed.title" :isUrl="true" />
+              <ImageLoader
+                :file="feed.ogimage.url"
+                :alt="feed.title"
+                ratio="1by1"
+                :isUrl="true" />
             </div>
             <div class="card-content">
               <div class="columns">

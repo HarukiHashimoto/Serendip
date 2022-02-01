@@ -1,16 +1,16 @@
 <template>
   <section class="article section content">
-    <!-- <section class="article-head">
-      <ImageLoader :file="article.img" :alt="article.alt" />
+    <section class="article-head">
+      <ImageLoader :file="feed.thumbnail" :alt="feed.title" :isUrl="true" />
       <section class="section article-title">
-        <p class="title">{{ article.title }}</p>
-        <p class="subtitle">{{ article.date }}</p>
+        <p class="title">{{ feed.title }}</p>
+        <p class="subtitle">{{ feed.publishedAt }}</p>
       </section>
     </section>
     <section class="article-content">
-      <nuxt-content :document="article" />
-    </section> -->
-    {{ feed }}
+      <br />
+      <span v-html="feed.body" />
+    </section>
   </section>
 </template>
 
@@ -24,24 +24,22 @@ import ImageLoader from '~/components/common/ImageLoader.vue'
   }
 })
 export default class NewsPage extends Vue {
-  // head() {
-  //   return {
-  //     title: this.$data.article.title + ' | 福井のタトゥースタジオ「Serendip」',
-  //     meta: [
-  //       {
-  //         hid: 'description',
-  //         meta: 'description',
-  //         content: this.$data.article.description
-  //       }
-  //     ]
-  //   }
-  // }
+  head() {
+    return {
+      title: this.feed.title + ' | 福井のタトゥースタジオ「Serendip」',
+      meta: [
+        {
+          hid: this.feed.description ?? this.feed.title,
+          meta: this.feed.description ?? this.feed.title,
+          content: this.feed.description ?? this.feed.title
+        }
+      ]
+    }
+  }
   async fetch() {
-    console.log(this.$route.params)
     await this.$store.dispatch('microcms/fetch', this.$route.params.slug)
   }
   get feed () {
-    console.log(this.$store.state.microcms.feed)
     return this.$store.state.microcms.feed
   }
 }

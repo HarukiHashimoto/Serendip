@@ -2,13 +2,17 @@
   <section>
     <SrHead :title="title" />
     <section class="section news-index">
-      {{ page }}
       <div class="columns is-multiline">
         <div v-for="feed in feeds" :key="feed.id" class="column is-4">
           <nuxt-link :to="'/news/'+ feed.id" class="article-card">
           <div class="card">
             <div class="card-image">
-              <ImageLoader :file="feed.ogimage.url" :alt="feed.title" :isUrl="true" />
+              <ImageLoader
+                :file="feed.ogimage.url"
+                :alt="feed.title"
+                :isUrl="true"
+                ratio="1by1"
+              />
             </div>
             <div class="card-content">
               <div class="column news-title">{{ feed.title }}</div>
@@ -21,12 +25,12 @@
       <div container has-text-centered class="pagenation">
         <section>
           <b-pagination
-          :total="totalCount"
-          v-model="page"
-          per-page="6"
-          icon-prev='chevron-left'
-          icon-next='chevron-right'
-          :simple="true"
+            :total="totalCount"
+            v-model="page"
+            per-page="6"
+            icon-prev='chevron-left'
+            icon-next='chevron-right'
+            :simple="true"
           >
             <template #previous="props">
               <b-pagination-button
@@ -80,7 +84,6 @@ export default class NewsIndex extends Vue{
     this.page = page
     const limit = 6
     await this.$store.dispatch('microcms/fetchFeedsByPage', { limit, page })
-    console.log(this.$store.state.microcms.cmsFeeds)
   }
 
   get totalCount (): number {
