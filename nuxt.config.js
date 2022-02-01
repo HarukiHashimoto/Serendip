@@ -164,6 +164,7 @@ export default {
   publicRuntimeConfig: {
     // For Instagram
     targetUser: process.env.TARGET_USER,
+    env: process.env.ENV
   },
 
   privateRuntimeConfig: {
