@@ -63,14 +63,14 @@ export default class TopGallary extends Vue{
   }
 
   get feeds(): object {
-    return this.$store.state.instagram.instagramFeeds
+    return this.$store.state.instagramFeeds
   }
 
   async fetch() {
     const businessID = this.$config.instagramBusinessId
     const accessToken = this.$config.accessToken
     if (typeof businessID !== 'undefined' && typeof accessToken !== 'undefined') {
-      await this.$store.dispatch('instagram/fetchInstagramFeeds', {
+      await this.$store.dispatch('fetchInstagramFeeds', {
         businessID,
         accessToken
       })
