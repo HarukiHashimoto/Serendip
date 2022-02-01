@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="content has-text-centered">
-      <nuxt-link to="/" >
+      <a href="/" >
         <div class="hero is-small">
           <div class="hero-body">
             <p class="title lato-bold">
@@ -12,7 +12,7 @@
             </p>
           </div>
         </div>
-      </nuxt-link>
+      </a>
         <p class="subtitle link">
           <a href="https://www.google.com/maps/place/%E3%80%92910-0023+%E7%A6%8F%E4%BA%95%E7%9C%8C%E7%A6%8F%E4%BA%95%E5%B8%82%E9%A0%86%E5%8C%96%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%96%E2%88%92%EF%BC%91%EF%BC%99/@36.0671017,136.211182,17z/data=!3m1!4b1!4m5!3m4!1s0x5ff8bee56e115f53:0xbb11922397341d0e!8m2!3d36.0671017!4d136.2133707" target="_blank">
             〒910-0023 福井市順化2丁目26-19 elle.bld 201

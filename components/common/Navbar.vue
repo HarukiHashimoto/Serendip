@@ -1,7 +1,7 @@
 <template>
   <b-navbar collapsible=true>
     <template #brand>
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <b-navbar-item  href="/">
         <img src="~/assets/images/common/brand.png" alt="TATTOO STUDIO SERENDIP">
       </b-navbar-item>
     </template>
@@ -10,9 +10,7 @@
         v-for="item in items"
         :key="item.title"
         :target="getTarget(item.isNewTab)"
-        :tag="item.tag"
-        :to="item.to"
-        :href="item.path"
+        :href="item.to"
         :rel="item.rel"
       >
         <span class="lato">{{ item.title }}</span>
@@ -73,6 +71,7 @@ export default class Navbar extends Vue{
         {
           title: "WEB STORE",
           path: "https://tatoostudioserendip.stores.jp",
+          to: "https://tatoostudioserendip.stores.jp",
           isNewTab: true,
           rel: "noopener noreferrer"
         }
