@@ -4,7 +4,7 @@
     <section class="section news-index">
       <div class="columns is-multiline">
         <div v-for="feed in feeds" :key="feed.id" class="column is-4">
-          <nuxt-link :to="'/news/'+ feed.id" class="article-card">
+          <a :href="'/news/'+ feed.id" class="article-card">
           <div class="card">
             <div class="card-image">
               <ImageLoader
@@ -19,7 +19,7 @@
               <div class="column news-date">{{ feed.publishedAt }}</div>
             </div>
           </div>
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <div container has-text-centered class="pagenation">
@@ -33,22 +33,24 @@
             :simple="true"
           >
             <template #previous="props">
-              <b-pagination-button
-                :page="props.page"
-                tag="router-link"
-                :to="`/news/page/${props.page.number}`"
+              <b-button
+                tag="a"
+                :href="`/news/page/${props.page.number}`"
+                class="pagination-link pagination-previous"
+                :disabled="prevDisabled"
               >
                 <b-icon icon="chevron-left"></b-icon>
-              </b-pagination-button>
+              </b-button>
             </template>
             <template #next="props">
-              <b-pagination-button
-                :page="props.page"
-                tag="router-link"
-                :to="`/news/page/${props.page.number}`"
+              <b-button
+                tag="a"
+                :href="`/news/page/${props.page.number}`"
+                class="pagination-link pagination-next"
+                :disabled="nextDisabled"
               >
                 <b-icon icon="chevron-right"></b-icon>
-              </b-pagination-button>
+              </b-button>
             </template>
           </b-pagination>
         </section>
@@ -95,7 +97,16 @@ export default class NewsIndex extends Vue{
   }
 
   page = 1
+
+  get prevDisabled (): boolean {
+    return this.page === 1
+  }
+
+  get nextDisabled (): boolean {
+    return this.totalCount <= this.page * 6
+  }
 }
+
 </script>
 
 <style lang="scss" scoped>
