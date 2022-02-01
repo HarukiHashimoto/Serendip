@@ -27,7 +27,6 @@ import axios from 'axios'
 export default class NewsPage extends Vue {
   feed = {}
   async created () {
-    console.log(this.$config.env !== 'production')
     if (this.$config.env !== 'production') {
       const query = this.$route.query
       if (query.id === undefined || query.draftKey === undefined) {
@@ -46,7 +45,6 @@ export default class NewsPage extends Vue {
         publishedAt,
         thumbnail: data.ogimage.url
       }
-      console.log(this.feed)
     }
     return
   }
