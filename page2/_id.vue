@@ -75,12 +75,6 @@ export default class NewsIndex extends Vue{
     return {titleEn: 'NEWS', titleJa: 'お知らせ'}
   }
 
-  // パラメータが数字以外の時/newsにリダイレクト
-  validate({ redirect, params }: any) {
-      if(/[0-9]+/.test(params.id)) return true;
-      return redirect('/news')
-  }
-
   // 記事取得
   articles = []  //初期化
   count = 0

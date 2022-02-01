@@ -12,7 +12,8 @@ export const state = () => ({
     body: '',
     description: '',
     thumbnail: ''
-}
+  },
+  totalCount: 0
 });
 
 export const mutations = {
@@ -30,6 +31,9 @@ export const mutations = {
     state.feed.description = feed.description
     state.feed.thumbnail = feed.thumbnail
 
+  },
+  setTotalCount(state, totalCount) {
+    state.totalCount = totalCount
   }
 };
 
@@ -43,6 +47,7 @@ export const actions = {
         fields: 'id,title,publishedAt,ogimage'
       }
     })
+    commit('setTotalCount', feeds.totalCount)
     commit('setFeeds', feeds)
   },
 
@@ -54,6 +59,7 @@ export const actions = {
         offset: (page - 1) * limit
       }
     })
+    commit('setTotalCount', feeds.totalCount)
     commit('setFeeds', feeds)
   },
 
