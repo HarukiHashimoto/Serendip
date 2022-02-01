@@ -5,7 +5,7 @@ export default {
     port: 9999
   },
   ssr: true,
-  target: 'server',
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Serendip | 福井のタトゥースタジオSerendip',
@@ -146,9 +146,19 @@ export default {
           range(1, Math.ceil(res.data.totalCount / limit)).map((p) => ({
             route: `/news/page/${p}`,
           }))
-        )
-      return pages
-    },
+      )
+      const news = await axios
+        .get('https://tattoostudioserendip.microcms.io/api/v1/blog?limit=100', {
+          headers: { 'X-MICROCMS-API-KEY': process.env.MICRO_CMS_API_KEY }
+        })
+        .then((res) =>
+          res.data.contents.map((content) => ({
+            route: `/news/${content.id}`,
+            feed: content
+          }))
+      )
+      return pages.concat(news)
+    }
   },
 
   publicRuntimeConfig: {

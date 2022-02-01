@@ -4,7 +4,7 @@
     <section class="section news-index">
       <div class="columns">
         <div v-for="feed in feeds" :key="feed.id" class="column">
-          <nuxt-link :to="'/news/'+ feed.id" class="article-card">
+          <a :href="'/news/'+ feed.id" class="article-card">
           <div class="card">
             <div class="card-image">
               <ImageLoader
@@ -20,13 +20,13 @@
               </div>
             </div>
           </div>
-          </nuxt-link>
+          </a>
         </div>
       </div>
       <div class="container has-text-centered">
-        <nuxt-link to="/news">
+        <a href="/news">
           <b-button rounded type="is-dark">View more</b-button>
-        </nuxt-link>
+        </a>
       </div>
     </section>
   </div>
