@@ -48,7 +48,10 @@ import SrHead from '@/components/common/SrHead.vue'
 export default class About extends Vue{
   head() {
     return {
-      title: 'ABOUT | 福井のタトゥースタジオ「Serendip」'
+      title: 'ABOUT | 福井のタトゥースタジオ「Serendip」',
+      meta: [
+        { hid: 'og:image', property: 'og:image', content: this.topImage },
+      ]
     }
   }
   get title (): object {

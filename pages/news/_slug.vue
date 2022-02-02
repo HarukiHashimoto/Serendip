@@ -28,11 +28,9 @@ export default class NewsPage extends Vue {
     return {
       title: this.feed.title + ' | 福井のタトゥースタジオ「Serendip」',
       meta: [
-        {
-          hid: this.feed.description ?? this.feed.title,
-          meta: this.feed.description ?? this.feed.title,
-          content: this.feed.description ?? this.feed.title
-        }
+        { hid: 'description', name: 'description', content: this.feed.description },
+        { hid: 'og:description', property: 'og:description', content: this.feed.description },
+        { hid: 'og:image', property: 'og:image', content: this.feed.thumbnail },
       ]
     }
   }

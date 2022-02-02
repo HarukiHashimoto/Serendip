@@ -65,7 +65,11 @@ import SrHead from '@/components/common/SrHead.vue'
 export default class Price extends Vue{
   head() {
     return {
-      title: 'PRICE | 福井のタトゥースタジオ「Serendip」'
+      title: 'PRICE | 福井のタトゥースタジオ「Serendip」',
+      meta: [
+        { hid: 'description', name: 'description', content: '料⾦表はあくまで⽬安の⾦額です。 実際にはデザイン内容（細かさ等）によって異なります。 デザイン打ち合わせ時に⼤体の⾦額をお伝え致しますが、 サイズや変更点を後の打ち合わせ調整後、デザイン決定してから確定致します。' },
+        { hid: 'og:description', property: 'og:description', content: '料⾦表はあくまで⽬安の⾦額です。 実際にはデザイン内容（細かさ等）によって異なります。 デザイン打ち合わせ時に⼤体の⾦額をお伝え致しますが、 サイズや変更点を後の打ち合わせ調整後、デザイン決定してから確定致します。' },
+      ]
     }
   }
   get title (): object {
