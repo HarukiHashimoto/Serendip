@@ -62,7 +62,8 @@ export const actions = {
       endpoint: 'blog',
       queries: {
         limit,
-        fields: 'id,title,publishedAt,ogimage'
+        fields: 'id,title,publishedAt,ogimage',
+        orders: '-publishedAt'
       }
     })
     commit('setTotalCount', feeds.totalCount)
@@ -74,7 +75,8 @@ export const actions = {
       endpoint: 'blog',
       queries: {
         limit,
-        offset: (page - 1) * limit
+        offset: (page - 1) * limit,
+        orders: '-publishedAt'
       }
     })
     commit('setTotalCount', feeds.totalCount)
