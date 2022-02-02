@@ -59,7 +59,12 @@ import ImageLoader from '~/components/common/ImageLoader.vue'
 export default class Sanitation extends Vue{
   head() {
     return {
-      title: 'SANITATION | 福井のタトゥースタジオ「Serendip」'
+      title: 'SANITATION | 福井のタトゥースタジオ「Serendip」',
+      meta: [
+        { hid: 'description', name: 'description', content: 'お客様と彫師が双方にとって安心・安全な施術を行うために、TATTOO STUDIO SERENDIPでは徹底した衛生管理を行っています。当スタジオでは、ウイルス感染（HIV・MRSA・HBV・HCV大腸菌等）バクテリアその他の病原菌及び雑菌に対して、細心の注意を払い衛生管理を徹底し、常に清潔な環境を維持しています。' },
+        { hid: 'og:description', property: 'og:description', content: 'お客様と彫師が双方にとって安心・安全な施術を行うために、TATTOO STUDIO SERENDIPでは徹底した衛生管理を行っています。当スタジオでは、ウイルス感染（HIV・MRSA・HBV・HCV大腸菌等）バクテリアその他の病原菌及び雑菌に対して、細心の注意を払い衛生管理を徹底し、常に清潔な環境を維持しています。' },
+        { hid: 'og:image', property: 'og:image', content: this.topImage }
+      ]
     }
   }
 

@@ -15,13 +15,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。' },
+      { hid: 'description', name: 'description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。アナタの「1度きりの人生」、信念や決意表明・シンボルマークとしての素敵なタトゥーとの出会いをぜひ「Serendip」で。※当店は基本的には予約制となりますのでご予約・ご来店の際はまずはお電話、もしくはメールでお気軽にお問い合わせください。' },
 
       { hid: 'og:site_name', property: 'og:site_name', content: 'Serendip | 福井のタトゥースタジオSerendip' },
       { hid: 'og:type', property: 'og:type', content: 'website' },
       { hid: 'og:url', property: 'og:url', content: 'https://www.tattoo-studio-serendip.com' },
       { hid: 'og:title', property: 'og:title', content: 'Serendip | Tattoo Studio Serendip' },
-      { hid: 'og:description', property: 'og:description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。' },
+      { hid: 'og:description', property: 'og:description', content: '福井市のタトゥースタジオ「Serendip」のホームページです。アナタの「1度きりの人生」、信念や決意表明・シンボルマークとしての素敵なタトゥーとの出会いをぜひ「Serendip」で。※当店は基本的には予約制となりますのでご予約・ご来店の際はまずはお電話、もしくはメールでお気軽にお問い合わせください。' },
       { hid: 'og:image', property: 'og:image', content: 'https://www.tattoo-studio-serendip.com/_nuxt/img/3e13ed3.JPG' },
 
       // { hid: 'fb:app_id', property: 'fb:app_id', content: 'App-ID' },
