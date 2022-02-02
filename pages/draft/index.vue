@@ -3,7 +3,7 @@
     <section class="article-head">
       <ImageLoader :file="feed.thumbnail" :alt="feed.title" :isUrl="true" />
       <section class="section article-title">
-        <p class="title">{{ feed.title }}</p>
+        <p class="title">下書き: {{ feed.title }}</p>
         <p class="subtitle">{{ feed.publishedAt }}</p>
       </section>
     </section>
