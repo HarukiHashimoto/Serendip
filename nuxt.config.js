@@ -92,7 +92,7 @@ export default {
 
   // sitemap
   sitemap: {
-    exclude: ['/draft/**'],
+    exclude: ['/draft'],
     hostname: 'https://www.tattoo-studio-serendip.com/'
   },
 
