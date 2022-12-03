@@ -45,9 +45,6 @@
         <li>
           A5サイズより⼤きいサイズや、2⽇以上時間のかかるデザインの場合、当店の判断で、時間制とさせて頂きます。
         </li>
-        <li>
-          現金のみのお取り扱い
-        </li>
       </ul>
     </section>
   </section>
@@ -107,12 +104,7 @@ export default class Price extends Vue{
     {
       name: '1時間',
       desc: '',
-      price: '￥10,000〜'
-    },
-    {
-      name: '以降30分毎',
-      desc: '',
-      price: '￥5,000〜'
+      price: '￥11,000〜'
     },
   ]
 }
