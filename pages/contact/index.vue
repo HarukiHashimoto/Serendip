@@ -19,7 +19,7 @@
 
             <div class="card">
               <div class="card-image">
-                <a href="tel:080-6356-0022">
+                <a href="tel:090-7548-2022">
                   <b-image
                     :src="require('@/assets/images/contact/tell.png')"
                     ratio="800by800"

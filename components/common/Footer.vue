@@ -14,11 +14,11 @@
         </div>
       </a>
         <p class="subtitle link">
-          <a href="https://www.google.com/maps/place/%E3%80%92910-0023+%E7%A6%8F%E4%BA%95%E7%9C%8C%E7%A6%8F%E4%BA%95%E5%B8%82%E9%A0%86%E5%8C%96%EF%BC%92%E4%B8%81%E7%9B%AE%EF%BC%92%EF%BC%96%E2%88%92%EF%BC%91%EF%BC%99/@36.0671017,136.211182,17z/data=!3m1!4b1!4m5!3m4!1s0x5ff8bee56e115f53:0xbb11922397341d0e!8m2!3d36.0671017!4d136.2133707" target="_blank">
-            〒910-0023 福井市順化2丁目26-19 elle.bld 201
+          <a href="https://goo.gl/maps/dyYYaSTaX3qLoySs6" target="_blank">
+            〒918-8026 福井県福井市渕4丁目1208アウラWEST
           </a>
         </p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.081916123602!2d136.21118201569635!3d36.06710601631882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8bf18f14ab3e7%3A0x99d48111e728614a!2sTATTOO%20STUDIO%20SERENDIP!5e0!3m2!1sja!2sjp!4v1643379026863!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3225.979816038253!2d136.18068271581805!3d36.04519848011106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff8b93857413b09%3A0x18ee228d9ef34cc!2z44CSOTE4LTgwMjYg56aP5LqV55yM56aP5LqV5biC5riV77yU5LiB55uu77yR77yS77yQ77yYIOOCouOCpuODqVdFU1Q!5e0!3m2!1sja!2sjp!4v1670068003877!5m2!1sja!2sjp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <div class="links columns is-mobile">
         <div class="column is-4 lato">
           <router-link class="link" to="/">
